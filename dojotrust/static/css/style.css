@@ -1,0 +1,353 @@
+@media screen only and (min-width:1000px) {
+
+  #insta{
+    position: fixed;
+
+  }
+}
+
+@media screen  and (max-width:367px) {
+
+  #insta{
+    display: none;
+
+  }
+}
+
+@media screen  and (min-width:1000px) {
+
+  /* .contain{
+    position: relative;
+    top: 30px !important;
+
+  } */
+  #navUser{
+    display: none;
+  }
+
+}
+.img{
+  position: absolute;
+  top:30px;
+  height: 500px;
+  width:600px;
+}
+.login {
+  border: 1px solid black;
+  position: relative;
+  top: 40px;
+  padding: 30px;
+  background-color: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.1);
+
+}
+.login h1{
+  text-align: center;
+  font-weight: 520;
+  font-size: 55px;
+
+  /* font-family: 'Satisfy', cursive; */
+  /* font-family: 'Lobster Two', cursive;
+  font-family: 'Playball', cursive;*/
+  font-family: 'Cookie', cursive;
+
+}
+.login form{
+  width: 70%;
+  margin: auto;
+}
+.login button{
+  padding: 10px !important;
+  width: 95%;
+  margin: auto;
+  margin: 5px;
+
+
+}
+.bt{
+    text-align:  center;
+}
+.open ul>li{
+  text-align: center;
+  position: relative;
+  top: 40px;
+  padding: 20px !important;
+}
+.animated{
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: rgba(0,0,0,0.05);
+}
+.facebook{
+  text-align: center;
+
+  font-weight: 500;
+  text-decoration: none;
+
+}
+.imga{
+
+  height: 50px;
+  width: 150px;;
+
+}
+.images{
+  text-align: center;
+  position: relative;
+  top: 40px;
+}
+.bottom ul{
+  text-decoration: none;
+  display: inline-block;
+
+}
+.bottom ul>li{
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 450;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: bold;
+
+}
+.color{
+  height: 2px !important;
+  color:red;
+}
+.muted{
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.5);
+  font-size: 13px;
+  box-shadow: none;
+}
+#nav{
+  z-index: 999;
+  height:12.5vh;
+  box-shadow:none;
+  border-bottom:1px solid rgba(0,0,0,0.1);
+  background-color: #FFFFFF;
+  z-index: 18885;
+}
+#icons{
+  font-weight: 400;
+  font-size: 35px;
+  font-family: 'Cookie', cursive;
+  color: black;
+
+}
+.fa-instagram{
+  margin: 5px;
+}
+.space{
+  margin: 8px;
+}
+.itens,.iten{
+  padding: 20px;
+  margin: 10px;
+}
+.ite{
+  color: black;
+}
+#searchUp{
+  height: 28px;
+}
+#card{
+  border: 1px solid rgba(0,0,0,0.2) !important;
+  box-shadow: none;
+  border-bottom: none !important;
+}
+#car{
+  border: 1px solid rgba(0,0,0,0.2) !important;
+  box-shadow: none;
+
+}
+.card-header,.card-footer{
+  background-color: #FFFFFF !important;
+}
+.footer{
+    border-bottom: none !important;
+}
+.rounded-circle{
+  border: 1px solid red;
+}
+#comment{
+  border-top: none !important;
+  border-radius: 0  0 5px 5px !important;
+  padding: 25px;
+}
+@media screen  and (min-width:1000px) {
+  #post{
+    padding: 10px !important;
+    position: relative;
+    left:570px;
+    top: -64px;
+    opacity: 0.6;
+  }
+}
+@media screen  and (max-width:360px) {
+  #post{
+
+    padding: 10px !important;
+    position: relative;
+    left:250px;
+    top: -64px;
+    opacity: 0.6;
+  }
+}
+
+#comment{
+
+}
+.stay{
+  height: 600px;
+  overflow-x: hidden;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+.idea a{
+  padding: 20px;
+  font-size: 25px;
+
+}
+.idea button{
+  background-color: #FFFFFF !important;
+  box-shadow: none;
+  padding: 5px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.fa-cog{
+  color: black;
+  padding: 20px;
+  font-size: 25px;
+}
+.info{
+  background-color: rgba(0,0,0,0.3);
+
+}
+.tags a{
+  padding: 20px;
+  font-weight: 400;
+  color: black;
+
+}
+.tags a:active{
+  text-decoration: underline;
+}
+.image img{
+  height: 250px;
+  width:100%;
+}
+.ref{
+  color: black;
+}
+.ref:active{
+  text-decoration: none;
+}
+.goUser{
+  font-weight: 400;
+  font-size: 25px;
+  color: black;
+}
+#goUser{
+  height: 50px;
+  width: auto;
+}
+#makeUpload{
+  background-color: #FFFFFF !important;
+  box-shadow: none;
+  padding: 7px;
+  color: black;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.uploads{
+    border: 1px solid rgba(0,0,0,0.2);
+
+    padding: 20px;
+}
+.uploads h3{
+  text-align: center;
+  font-weight: 400;
+  font-size: 35px;
+  font-family: 'Cookie', cursive;
+  color: black;
+}
+#logi {
+  border: 1px solid black;
+  position: relative;
+  top: 40px;
+  padding: 30px;
+  background-color: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.1);
+
+}
+#logi h1{
+  text-align: center;
+  font-weight: 520;
+  font-size: 55px;
+
+  /* font-family: 'Satisfy', cursive; */
+  /* font-family: 'Lobster Two', cursive;
+  font-family: 'Playball', cursive;*/
+  font-family: 'Cookie', cursive;
+
+}
+
+#logi a{
+  padding: 10px !important;
+
+  margin-left: 60px;
+  margin: 5px;
+}
+#span{
+  font-weight: 400;
+  font-size: 20px;
+}
+#logi a{
+  padding-left: 60px;
+}
+.section button{
+  color: black;
+  background-color: #FFFFFF !important;
+  box-shadow: none;
+  padding: 5px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.section button:hover{
+  color: black;
+}
+.lik{
+  font-size: 10px !important;
+  color: red;
+  padding: 12px !important;
+}
+#follow{
+  display: inline-block;
+  margin-left: 15px;
+}
+.following{
+  display: none;
+  color: blue;
+}
+.following:hover{
+  color: blue;
+}
+#navbarSupportedContent a{
+  font-size: 20px;
+
+}
+.font{
+  font-size: 15px;
+  text-transform: capitalize;
+
+}
+#close{
+  color: black;
+  background-color: #FFFFFF !important;
+  box-shadow: none;
+  padding: 5px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
