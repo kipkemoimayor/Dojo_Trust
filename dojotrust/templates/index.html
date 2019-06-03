@@ -4,7 +4,9 @@
 <div class="jumbotron">
 <h1>Dojo review</h1>
 
-
+{%if user.is_authenticated%}
+<p>Welcome {{user.username}}</p>
+{%endif%}
 </div>
 
 {%endblock%}

@@ -29,7 +29,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
+#login redirect
+LOGIN_REDIRECT_URL='/'
 #socila login
 
 SOCIAL_AUTH_URL_NAMESPACE='social'
@@ -41,6 +42,19 @@ SOCIAL_AUTH_GOOGLE_PLUS_SECRET='y7cx2fdGaXEWByWuEz_BS6Tn'
 
 AUTHENTICATION_BACKENDS=(
     'social_core.backends.google.GooglePlusAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.social_auth.associate_by_email',
+    'social_core.pipeline.user.create_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
 )
 
 INSTALLED_APPS = [
