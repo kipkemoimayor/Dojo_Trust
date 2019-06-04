@@ -2,3 +2,28 @@
   text-align: center;
 
 }
+
+.form{
+  margin: auto;
+  width: 40%;
+  margin-top: 130px;
+  color: white;
+  font-weight: 500;
+}
+.form p{
+    text-align: center;
+}
+.form p button{
+  width: 70%;
+}
+#parta{
+  background-color: #333549;
+  height: 605px !important;
+}
+#partb{
+  height: 605px !important;
+  background-image: url(../img/login.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
