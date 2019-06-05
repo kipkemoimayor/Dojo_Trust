@@ -5,7 +5,10 @@
     <meta charset="utf-8">
     <title>{{title}}</title>
     {%block styles%}
-    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="theme-color" content="#000000">
+    <link  rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
     <link rel="stylesheet" href="{%static 'css/mdb.css'%}">
     <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
     <link rel="stylesheet" href="{%static 'css/style.css'%}">
