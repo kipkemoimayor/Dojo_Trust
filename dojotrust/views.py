@@ -1,14 +1,16 @@
 from django.shortcuts import render,redirect
 from .forms import Businessform,ProfileForm
 from .models import Users,Business
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
 def index(request):
     business=Business.objects.all()
-    return render(request,'index.html',{'business':business})
+    title='Dojo Home'
+    return render(request,'index.html',{'business':business,'title':title})
 
+@login_required(login_url='/accounts/login/')
 def dashboard(request):
     user_id=Users.objects.filter(user=request.user)
     id=0
@@ -47,3 +49,9 @@ def profile(request):
         form=ProfileForm()
 
     return render(request,'profile.html',{'form':form,'profiles':profiles})
+
+def single_business(request,business_id):
+    
+    busi=Business.objects.filter(pk=business_id).first()
+    business=Business.objects.filter(pk=business_id)
+    return render(request,'single_business.html',{"business":business,'busi':busi})

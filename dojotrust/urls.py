@@ -7,6 +7,8 @@ urlpatterns=[
     url(r'^$',views.index,name='home'),
     url(r'^dashboard/',views.dashboard,name='dashboard'),
     url(r'^profile/',views.profile,name='profile'),
+    url(r'^business/(\d+)/',views.single_business,name='single')
+
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

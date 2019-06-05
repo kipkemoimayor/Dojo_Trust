@@ -26,7 +26,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
+#star_ratings
+STAR_RATINGS_RERATE = True
+STAR_RATINGS_RANGE=10
+STAR_RATINGS_STAR_HEIGHT=32
+STAR_RATINGS_STAR_WIDTH=32
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #login redirect
@@ -67,6 +71,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
+    'star_ratings',
 ]
 
 MIDDLEWARE = [
@@ -93,6 +98,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+
             ],
         },
     },
