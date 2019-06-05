@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{{block.super}}
+  {%block content%}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form class="form-group" action="{%url 'profile'%}" enctype="multipart/form-data" method="post">
+        {%csrf_token%}
+        {%bootstrap_form form%}
+        <button class="btn btn-dark btn-sm" type="submit" name="button">Submit</button>
+
+      </form>
+
+    </div>
+    <div class="col-md-6">
+
+      <div class="jumbotron">
+      {{user}} Profile
+      {%for i in profiles%}
+      {%if i.profile%}
+      <img class="img-fluid" src="{{i.profile.url}}" alt="">
+      {%else%}
+      <img src="" alt="{{user}}">
+      {%endif%}
+      <p>{{i.bio}}</p>
+      {%endfor%}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{%endblock%}

@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <form class="form-group" action="{%url 'dashboard'%}" method="post">
+      <form class="form-group" action="{%url 'dashboard'%}" enctype="multipart/form-data" method="post">
         {%csrf_token%}
         {%bootstrap_form form%}
         <button class="btn btn-dark btn-sm" type="submit" name="button">Submit</button>

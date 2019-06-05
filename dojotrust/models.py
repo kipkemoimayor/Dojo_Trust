@@ -13,10 +13,9 @@ class Users(models.Model):
 
 class Business(models.Model):
     businesName=models.CharField(max_length=50)
-    image=models.ImageField(upload_to='business/',blank=True)
+    image=models.ImageField(upload_to='business/',blank=True,default='user.png')
     description=models.TextField(max_length=500)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     users=models.ForeignKey(Users,on_delete=models.CASCADE)
-
 class Rate(models.Model):
     pass
