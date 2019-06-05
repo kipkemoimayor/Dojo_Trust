@@ -1,4 +1,5 @@
 {%extends 'base.html'%}
+{%load bootstrap4%}
 {%load ratings%}
 {{block.super}}
 {%block content%}
@@ -29,6 +30,51 @@
       {%endfor%}
     </div>
 
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-1"> </div>
+    <div class="col-md-10">
+      <br>
+      <div class="profile">
+
+        <form class="form-group" action="" method="post">
+          {%csrf_token%}
+          {%bootstrap_form form layout='inline'%}
+        </form>
+        {%for pro in profile%}
+          <img height="50" width="90" src="{{pro.profile.url}}" alt="user">
+          {%endfor%}
+      </div>
+     </div>
+    <div class="col-md-1"> </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-1"> </div>
+    <div class="col-md-3">
+      <img height="150" width="150" class="rounded-circle " src="/static/img/slogan.png" alt="">
+     </div>
+     <div class="col-md-7">
+       <h5 class="animated fadeIn">Reviews <i class="fas fa-comment-dots">{{reviews|length}}</i></h5>
+       <hr>
+       {%for rev in reviews%}
+       <div class="comments">
+         <img class="rounded-circle" height="50" width="50" src="{{rev.profile.profile.url}}" alt="user">
+         <span>{{rev.user}}</span>
+         <br>
+         <span class="com">{{rev.review}}</span>
+
+
+       </div>
+
+
+       {%endfor%}
+
+
+     </div>
+    <div class="col-md-1"> </div>
 
   </div>
 </div>

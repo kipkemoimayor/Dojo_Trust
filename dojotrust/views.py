@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .forms import Businessform,ProfileForm
-from .models import Users,Business
+from .forms import Businessform,ProfileForm,ReviewForm
+from .models import Users,Business,Reviews
 from django.contrib.auth.decorators import login_required
 from star_ratings.models import Rating
 # Create your views here.
@@ -79,4 +79,18 @@ def single_business(request,business_id):
         raise Http404()
     busi=Business.objects.filter(pk=business_id).first()
     business=Business.objects.filter(pk=business_id)
-    return render(request,'single_business.html',{"business":business,'busi':busi,'message':message})
+    profile=Users.objects.filter(user=request.user)
+    reviews=Reviews.objects.filter(business=business_id)
+    if request.method=='POST':
+        form=ReviewForm(request.POST,request.FILES)
+        if form.is_valid():
+            review=form.save(commit=False)
+            review.user=request.user
+            review.profile=Users(request.user.id)
+            review.business=Business(business_id)
+            review.save()
+
+        return redirect("single",business_id)
+    else:
+        form=ReviewForm()
+    return render(request,'single_business.html',{"business":business,'busi':busi,'message':message,'form':form,'profile':profile,'reviews':reviews})

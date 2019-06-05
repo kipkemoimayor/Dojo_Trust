@@ -17,6 +17,7 @@ CATEGORIES=(
 )
 
 class Business(models.Model):
+    company=models.CharField(max_length=50,blank=True)
     businesName=models.CharField(max_length=50)
     category=models.CharField(max_length=7,choices=CATEGORIES,default='select')
     image=models.ImageField(upload_to='business/',blank=True,default='user.png')
@@ -27,6 +28,12 @@ class Business(models.Model):
     def __str__(self):
         return self.businesName
 
-        
-class Rate(models.Model):
-    pass
+
+class Reviews(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    business=models.ForeignKey(Business,on_delete=models.CASCADE,blank=True)
+    review=models.CharField(max_length=200,blank=True,help_text='Leave a review')
+    profile=models.ForeignKey(Users,on_delete=models.CASCADE,blank=True)
+
+    def __str__(self):
+        return self.review

@@ -125,3 +125,22 @@ body{
 #product{
   font-weight: 500;
 }
+.profile{
+  background-color: rgba(0,0,0,0.2);
+  padding: 10px;
+  height: 10vh;
+}
+.profile form{
+  padding-bottom: 5px;
+  float: right;
+  width: 90%;
+
+}
+.profile img{
+  padding: 5px;
+}
+.com{
+  margin-left: 10vh;
+  font-size: 13px;
+  font-weight: 400;
+}
