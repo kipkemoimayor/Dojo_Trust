@@ -6,9 +6,14 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    business=Business.objects.all()
+    business=Business.objects.all()[::-1]
+    estate=Business.objects.filter(category='real').all()
+    cars=Business.objects.filter(category='cars').all()
+    agriculture=Business.objects.filter(category='agri').all()
+    wear=Business.objects.filter(category='wear').all()
+
     title='Dojo Home'
-    return render(request,'index.html',{'business':business,'title':title})
+    return render(request,'index.html',{'business':business,'title':title,'estate':estate,'cars':cars,'agriculture':agriculture,'wear':wear})
 
 @login_required(login_url='/accounts/login/')
 def dashboard(request):
@@ -51,7 +56,7 @@ def profile(request):
     return render(request,'profile.html',{'form':form,'profiles':profiles})
 
 def single_business(request,business_id):
-    
+
     busi=Business.objects.filter(pk=business_id).first()
     business=Business.objects.filter(pk=business_id)
     return render(request,'single_business.html',{"business":business,'busi':busi})

@@ -41,12 +41,17 @@
   flex-wrap: wrap; */
   /* white-space:nowrap; */
 }
+::-webkit-scrollbar{
+
+   display: none;
+}
 .sizecard{
   /* height: 150px;
   display: inline-block; */
   padding: 2px;
-  width: 280px !important;
+  width: 250px !important;
   flex: 0 0 auto;
+  padding: 15px;
 }
 
 
@@ -59,4 +64,43 @@
 .images{
   width: 100%;
   height: 180px;
+}
+body{
+  background-color:rgba(0,0,0,0.1);
+  color: #333;
+}
+.container-fluid{
+  background-color: #fff;
+
+}
+.all{
+  margin-left: 50px;
+  margin-right:50px;
+
+}
+.card{
+  box-shadow: none;
+}
+.bg-dar{
+  background-color: rgba(0,0,0,0.1) !important;
+}
+#stiky{
+  padding: 30px;
+  position: fixed;
+  z-index: 9999;
+  right: 40px;
+
+}
+@media screen and (max-width:767px) {
+  #stiky{
+    display: none;
+  }
+
+}
+#onetwo{
+    border-right: 1px  solid rgba(0,0,0,0.2);
+}
+.navbar{
+  height: 8vh;
+  background-color: rgba(0,0,0,0.8) !important;
 }
