@@ -8,7 +8,7 @@
 <div style='' class="container-fluid">
   <div class="row">
     <div id="onetwo" class="col-md-9">
-      <h4>Cars</h4>
+      <h4>Cars</h4> <span class="categories" style="margin-left:5px"> Category</span>
 
       <div class="row">
 
@@ -25,6 +25,9 @@
               </div>
             <div class="card-footer">
               <a href="{%url 'single' busi.id%}{{busi.businesName}}">View Ratings</a>
+
+              <span  style="margin-left:10px;"class="badge badge-pill badge-dark"> reviews</span>
+
             </div>
             </div>
 
@@ -38,9 +41,11 @@
 
       </div>
       <div class="row">
-        <h2>Agriculture</h2>
+        {%if agriculture%}
+        <h4>Agriculture </h4>  <span class="categories" style="margin-left:5px"> Category</span>
         <div class="col-md-12">
           <div class="size">
+
           {%for busi in agriculture%}
 
             <div class="card sizecard">
@@ -58,11 +63,13 @@
             {%endfor%}
               </div>
               <hr class="bg-dar">
+              {%endif%}
         </div>
 
       </div>
       <div class="row">
-        <h4>Clothes</h4>
+        {%if wear%}
+        <h4>Clothes</h4>  <span class="categories" style="margin-left:5px"> Category</span>
         <div class="col-md-12">
           <div class="size">
           {%for busi in wear%}
@@ -83,10 +90,11 @@
               </div>
               <hr class="bg-dar">
         </div>
-
+        {%endif%}
       </div>
       <div class="row">
-        <h4>Real Estate</h4>
+        {%if estate%}
+        <h4>Real Estate</h4>  <span class="categories" style="margin-left:5px"> Category</span>
         <div class="col-md-12">
           <div class="size">
           {%for busi in estate%}
@@ -109,6 +117,7 @@
         </div>
 
       </div>
+      {%endif%}
 
 
 

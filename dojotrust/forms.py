@@ -15,3 +15,6 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model=Reviews
         exclude=['user','business','profile']
+        widgets={
+            'review': forms.TextInput(attrs={'placeholder':'Leave a review Press enter when done'}),
+        }

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Users(models.Model):
     name=models.CharField(max_length=50)
-    profile=models.ImageField(upload_to='profile/',blank=True)
+    profile=models.ImageField(upload_to='profile/',default='user.png',blank=True)
     bio=models.CharField(max_length=60)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
 
@@ -32,7 +32,7 @@ class Business(models.Model):
 class Reviews(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     business=models.ForeignKey(Business,on_delete=models.CASCADE,blank=True)
-    review=models.CharField(max_length=200,blank=True,help_text='Leave a review')
+    review=models.CharField(max_length=200,help_text='Leave a review')
     profile=models.ForeignKey(Users,on_delete=models.CASCADE,blank=True)
 
     def __str__(self):

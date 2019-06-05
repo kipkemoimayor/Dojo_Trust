@@ -144,3 +144,11 @@ body{
   font-size: 13px;
   font-weight: 400;
 }
+h4{
+  margin-left: 10px;
+}
+.categories{
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: underline;
+}

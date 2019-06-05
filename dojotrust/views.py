@@ -13,6 +13,7 @@ def index(request):
     agriculture=Business.objects.filter(category='agri').all()
     wear=Business.objects.filter(category='wear').all()
     rate=Rating.objects.all()
+    reviews=Reviews.objects.all()
     top=0;
     idi=0
     for t in rate:
@@ -22,7 +23,7 @@ def index(request):
 
     topRate=Business.objects.filter(id=idi)[:1]
     title='Dojo Home'
-    return render(request,'index.html',{'business':business,'title':title,'estate':estate,'cars':cars,'agriculture':agriculture,'wear':wear,'top':topRate,'count':round(top,1)})
+    return render(request,'index.html',{'business':business,'title':title,'estate':estate,'cars':cars,'agriculture':agriculture,'wear':wear,'top':topRate,'count':round(top,1),'reviews':reviews})
 
 @login_required(login_url='/accounts/login/')
 def dashboard(request):
@@ -63,7 +64,7 @@ def profile(request):
         form=ProfileForm()
 
     return render(request,'profile.html',{'form':form,'profiles':profiles})
-
+@login_required(login_url='/accounts/login/')
 def single_business(request,business_id):
     try:
         rate=Rating.objects.filter(object_id=business_id)
