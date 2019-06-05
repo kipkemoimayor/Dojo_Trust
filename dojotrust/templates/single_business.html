@@ -2,47 +2,35 @@
 {%load ratings%}
 {{block.super}}
 {%block content%}
+<div class="all">
+
+
 <div class="container-fluid">
-  
-  <div class="row">
-    <div class="col-md-8">
-      <h4>Cars</h4>
 
-      <div class="row">
-        {%for busi in business%}
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-header">
-              <h6>{{busi.businesName}}</h6>
-
-            </div>
-
-              <img class="img-fluid" src="{{busi.image.url}}" alt="">
-
-
-          </div>
-
+  <div class="single_business">
+    <div class="row">
+      {%for busi in business%}
+      <div class="col-md-4">
+        <i>Company</i><h1>{{busi.businesName}}</h1>
+        <i>Product description</i>
+        <p>{{busi.description}}</p>
+      </div>
+      <div class="col-md-4">
+        <div style="color:white;padding:20px;background-color:rgba(0,0,0,0.8)" class="card">
+            {%ratings busi icon_width=25%}
         </div>
-
-          {%endfor%}
-
-
+        <p class="alert alert-dark">Please Rate on a scale of ten and review this Product <br>Your feedback Is Valued</p>
+        <br><br>
+        <p class="alert bg-dark">{{message}}</p>
       </div>
-
-
-
-    </div>
-    <div class="col-md-4">
-      <h1>side things</h1>
-      <div style="color:white;padding:20px;background-color:#848" class="card">
-          {%ratings busi icon_width=25%}
+      <div class="col-md-4">
+        <img class="img-fluid imgFluid" src="{{busi.image.url}}" alt="">
       </div>
-
-
+      {%endfor%}
     </div>
+
 
   </div>
-
 </div>
 
 {%endblock%}

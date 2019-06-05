@@ -3,3 +3,36 @@
 
 ame=10
 {% endblock %}
+
+<div class="row">
+  <div class="col-md-8">
+
+    <div class="row">
+      {%for busi in business%}
+      <div class="col-md-4">
+        <div class="card">
+            <img class="img-fluid" src="{{busi.image.url}}" alt="">
+        </div>
+
+      </div>
+
+        {%endfor%}
+
+
+    </div>
+
+
+
+  </div>
+  <div class="col-md-4">
+    <h1>side things</h1>
+    <div style="color:white;padding:20px;background-color:#848" class="card">
+        {%ratings busi icon_width=25%}
+    </div>
+
+
+  </div>
+
+</div>
+
+</div>

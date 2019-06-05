@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import Businessform,ProfileForm
 from .models import Users,Business
 from django.contrib.auth.decorators import login_required
+from star_ratings.models import Rating
 # Create your views here.
 
 
@@ -11,9 +12,17 @@ def index(request):
     cars=Business.objects.filter(category='cars').all()
     agriculture=Business.objects.filter(category='agri').all()
     wear=Business.objects.filter(category='wear').all()
+    rate=Rating.objects.all()
+    top=0;
+    idi=0
+    for t in rate:
+        if t.average>top:
+            top=t.average
+            idi=t.object_id
 
+    topRate=Business.objects.filter(id=idi)[:1]
     title='Dojo Home'
-    return render(request,'index.html',{'business':business,'title':title,'estate':estate,'cars':cars,'agriculture':agriculture,'wear':wear})
+    return render(request,'index.html',{'business':business,'title':title,'estate':estate,'cars':cars,'agriculture':agriculture,'wear':wear,'top':topRate,'count':round(top,1)})
 
 @login_required(login_url='/accounts/login/')
 def dashboard(request):
@@ -56,7 +65,18 @@ def profile(request):
     return render(request,'profile.html',{'form':form,'profiles':profiles})
 
 def single_business(request,business_id):
+    try:
+        rate=Rating.objects.filter(object_id=business_id)
+        ave=0
+        for j in rate:
+            ave+=j.average
 
+        if ave>=5:
+            message='This Product Is recommended'
+        else:
+            message='Make a decision'
+    except Exception as e:
+        raise Http404()
     busi=Business.objects.filter(pk=business_id).first()
     business=Business.objects.filter(pk=business_id)
-    return render(request,'single_business.html',{"business":business,'busi':busi})
+    return render(request,'single_business.html',{"business":business,'busi':busi,'message':message})

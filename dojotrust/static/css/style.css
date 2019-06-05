@@ -104,3 +104,24 @@ body{
   height: 8vh;
   background-color: rgba(0,0,0,0.8) !important;
 }
+.single_business{
+  height: 70vh;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  font-weight: 400;
+  padding: 7px;
+}
+.imgFluid{
+  height: 67vh !important;
+
+}
+@media screen and (max-width:367px) {
+  .imgFluid{
+    height: auto !important;
+
+  }
+
+}
+#product{
+  font-weight: 500;
+}
