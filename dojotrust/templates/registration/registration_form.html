@@ -1,4 +1,4 @@
-{%extends 'base.html'%}
+{%extends 'registration/base.html'%}
 {%load bootstrap4%}
 {{block.super}}
 {%block content%}
@@ -9,6 +9,8 @@
     <div class="col-md-6">
       <div class="signUp">
         <form class="" action="/accounts/register/" method="post">
+          <p style="text-align:center"><img src="/static/img/do.png" alt=""></p>
+
           {%csrf_token%}
           {%bootstrap_form form layout='inline'%}
           <p><button class="btn btn-dark btn-sm" type="submit" name="button">register</button> or <a href="/accounts/login/">Login</a></p>
