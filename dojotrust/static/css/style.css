@@ -26,6 +26,21 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  text-align: center;
+
+}
+#partb h1{
+  color: white;
+  font-size: 50px;
+  font-weight: 500;
+}
+#partb strong{
+  color:yellow;
+}
+.partb{
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  width: 100%;
 }
 .size{
 
@@ -211,4 +226,14 @@ h4{
   width: 70%;
   padding: 15px;
   border: 1px solid rgba(0,0,0,0.2);
+}
+.signUp{
+  margin: auto;
+  width: 70%;
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 30px;
+}
+.signUp form{
+  padding: 10px;
 }

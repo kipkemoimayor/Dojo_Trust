@@ -7,11 +7,14 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
+      <div class="signUp">
         <form class="" action="/accounts/register/" method="post">
           {%csrf_token%}
-          {%bootstrap_form form%}
-          <p><button class="btn btn-dark btn-sm" type="submit" name="button">register</button></p>
+          {%bootstrap_form form layout='inline'%}
+          <p><button class="btn btn-dark btn-sm" type="submit" name="button">register</button> or <a href="/accounts/login/">Login</a></p>
         </form>
+      </div>
+
 
     </div>
     <div class="col-md-3"></div>

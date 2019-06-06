@@ -8,11 +8,12 @@
     <div id="parta" class="col-md-6">
       <div class="form">
         <form class="" action="/accounts/login/" method="post">
+
           {%csrf_token%}
           {%bootstrap_form form%}
           <p><button class="btn btn-dark btn-sm" type="submit" name="button">Login</button></p>
-          <p>or login with google <a href='{% url "social:begin" "google-plus" %}'>Google</a></p>
-          <p><a href="/accounts/register/">Sign Up</a></p>
+          <p>or login with google <img height="50" width="50" src="/static/img/search.png" alt=""> <br> <a class="btn btn-info btn-sm" href='{% url "social:begin" "google-plus" %}'>Google</a></p>
+          <p>Dont have an account? <a href="/accounts/register/">Sign Up</a></p>
 
 
         </form>
@@ -21,7 +22,14 @@
 
     </div>
     <div id='partb' class="col-md-6">
-      <h1>Image</h1>
+      <div class="partb">
+        <h1>DOJO TRUST</h1>
+        <h1>REGISTER YOUR PRODUCT</h1>
+        <h1>PUBLISH</h1>
+        <h1>LET YOUR CUSTOMERS <strong>RATE</strong> AND <strong>REVIEW</strong> </h1>
+        <h1>MAKE OTHER PEOPLE TRUST YOUR PRODUCT</h1>
+      </div>
+
     </div>
 
   </div>

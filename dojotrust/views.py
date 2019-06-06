@@ -49,7 +49,7 @@ def dashboard(request):
         form=Businessform()
 
     return render(request,'dashboard.html',{'form':form,'profile':profile})
-
+@login_required(login_url='/accounts/login/')
 def profile(request):
     try:
         profiles=Users.objects.filter(user=request.user)
