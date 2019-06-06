@@ -206,3 +206,9 @@ h4{
   height: 50vh;
   font-weight: 500;
 }
+.dash{
+  margin: auto;
+  width: 70%;
+  padding: 15px;
+  border: 1px solid rgba(0,0,0,0.2);
+}

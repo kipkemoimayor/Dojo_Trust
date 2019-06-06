@@ -29,6 +29,7 @@ def index(request):
 @login_required(login_url='/accounts/login/')
 def dashboard(request):
     user_id=Users.objects.filter(user=request.user)
+    profile=Users.objects.filter(user=request.user)
     id=0
     for i in user_id:
         id+=i.id
@@ -47,7 +48,7 @@ def dashboard(request):
     else:
         form=Businessform()
 
-    return render(request,'dashboard.html',{'form':form})
+    return render(request,'dashboard.html',{'form':form,'profile':profile})
 
 def profile(request):
     try:

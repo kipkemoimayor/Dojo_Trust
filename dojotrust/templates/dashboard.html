@@ -2,24 +2,34 @@
 {%load bootstrap4%}
 {{block.super}}
 {%block content%}
-<div class="jumbotron">
-{{user}} Dashboard
+<div class="all">
 
-</div>
-<div class="container">
+
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
-      <form class="form-group" action="{%url 'dashboard'%}" enctype="multipart/form-data" method="post">
-        {%csrf_token%}
-        {%bootstrap_form form%}
-        <button class="btn btn-dark btn-sm" type="submit" name="button">Submit</button>
+    <div class="col-md-2"></div>
+    <div class="col-md-8"><br>
+      <div class="dash">
+        {%if profile%}
+        <form class="form-group" action="{%url 'dashboard'%}" enctype="multipart/form-data" method="post">
+          {%csrf_token%}
+          {%bootstrap_form form%}
+          <button class="btn btn-dark btn-sm" type="submit" name="button">Submit</button>
 
-      </form>
+        </form>
+        {%else%}
+        <p class="alert alert-dark">Please Update your Profile To continue   <a  class="btn btn-warning btn-sm" href="{%url 'profile'%}">Update profile</a></p>
+        {%endif%}
+
+      </div>
 
     </div>
+    <div class="col-md-2"></div>
+
 
   </div>
 
+</div>
 </div>
 
 {%endblock%}
