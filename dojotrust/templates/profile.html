@@ -4,33 +4,104 @@
   {%block content%}
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <form class="form-group" action="{%url 'profile'%}" enctype="multipart/form-data" method="post">
-        {%csrf_token%}
-        {%bootstrap_form form%}
-        <button class="btn btn-dark btn-sm" type="submit" name="button">Submit</button>
+    <div class="col-md-12">
 
-      </form>
-
-    </div>
-    <div class="col-md-6">
-
-      <div class="jumbotron">
-      {{user}} Profile
       {%for i in profiles%}
       {%if i.profile%}
-      <img class="img-fluid" src="{{i.profile.url}}" alt="">
-      {%else%}
-      <img src="" alt="{{user}}">
-      {%endif%}
-      <p>{{i.bio}}</p>
-      {%endfor%}
+        <div style="background-image:url({{i.profile.url}})" class="jumboton profilImage">
+          <div class="mayor">
 
-      </div>
+
+            {%endif%}
+            <br>
+          {%endfor%}
+          {%if profiles%}
+
+          <div class="row">
+          <div class="col-md-4 ">
+          <p style='text-align:center'> <strong class="bg-warning" id="short">{{name}}</strong></p>
+            <br>
+            <p style='text-align:center'><button class="btn btn-dark btn-sm" type="button" name="button">Update profile</button></p>
+          </div>
+          <div class="col-md-4 ">
+            {%for i in profiles%}
+            {%if i.profile%}
+            <img height="200" width="200" class="rounded-circle " src="{{i.profile.url}}" alt="">
+            {%else%}
+            <img src="" alt="{{user}}">
+            {%endif%}
+            <p style="">{{i.bio}}</p>
+
+            {%endfor%}
+            {%else%}
+            <div class="update">
+              <form class="form-group" action="{%url 'profile'%}" enctype="multipart/form-data" method="post">
+                <h5 style="text-align:center" class="alert alert-info">Please Update Your Profile</h5>
+                {%csrf_token%}
+                {%bootstrap_form form%}
+                <button class="btn btn-dark btn-sm" type="submit" name="button">Submit</button>
+
+              </form>
+            </div>
+            {%endif%}
+          </div>
+          <div class="col-md-4 ">
+            <h5>Highlights</h5>
+            <span  style="margin-left:10px;"class="badge badge-pill badge-warning"> Product Posted {{business.count}}</span> <br>
+            <span  style="margin-left:10px;"class="badge badge-pill badge-warning"> Reviews Posted {{reviews.count}}</span>
+
+
+          </div>
+            </div>
+        </div>
+          </div>
+
 
     </div>
 
   </div>
+  </div>
+  <div class="container">
+
+  <div class="row">
+    {%if business%}
+    {%for busi in business%}
+    <div class="col-md-3">
+      <div class="card sizecard">
+        <div class="card-header">
+          <h6>{{busi.businesName}}</h6>
+        </div>
+        <div class="image">
+          <img class="images" src="{{busi.image.url}}" alt="">
+        </div>
+      <div class="card-footer">
+        <a href="{%url 'single' busi.id%}{{busi.businesName}}">View Ratings</a>
+
+        <span  style="margin-left:10px;"class="badge badge-pill badge-dark"> reviews</span>
+
+      </div>
+      </div>
+      </div>
+
+
+        {%endfor%}
+
+      {%else%}
+
+        <div class="col-md-12">
+          <p style='text-align:center;height:20vh' class="alert alert-dark"> <br>You have no Product Published <br>
+          Do you own business ? <a class="btn btn-outline-warning btn-sm" href="{%url 'dashboard'%}{{user}}">Publish your Product</a></p>
+          {%endif%}
+        </div>
+
+      </div>
+
+
+
+
+
+
+
 
 </div>
 

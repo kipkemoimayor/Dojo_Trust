@@ -174,3 +174,35 @@ h4{
   background-color: rgba(0,0,0,0.05);
   padding: 5px;
 }
+.update{
+  margin: auto;
+  width: 40%;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 20px;
+}
+#short{
+  padding: 15px;
+  font-size: 50px;
+  font-weight: 500;
+  white-space: pre-wrap;
+  border: 1px solid black;
+  color: white;
+  background-color: rgba(0,0,0,0.1);
+  text-transform: capitalize;
+  border-radius: 90px;
+  text-align:center;
+}
+.profilImage{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+}
+.mayor{
+
+  background-color: rgba(0,0,0,0.8) !important;
+  color: white;
+  text-align: center;
+  height: 50vh;
+  font-weight: 500;
+}

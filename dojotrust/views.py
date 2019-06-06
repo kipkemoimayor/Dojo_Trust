@@ -52,6 +52,8 @@ def dashboard(request):
 def profile(request):
     try:
         profiles=Users.objects.filter(user=request.user)
+        business=Business.objects.filter(user=request.user)
+        reviews=Reviews.objects.filter(user=request.user)
     except Exception as e:
         raise Http404()
     if request.method=='POST':
@@ -64,7 +66,19 @@ def profile(request):
     else:
         form=ProfileForm()
 
-    return render(request,'profile.html',{'form':form,'profiles':profiles})
+    name=''
+    for na in profiles:
+        name=na.name
+
+    new_name=name.split(" ")
+    if len(new_name)>=2:
+
+        newName=new_name[0][0]+new_name[1][0]
+    else:
+        newName=''
+
+
+    return render(request,'profile.html',{'form':form,'profiles':profiles,'name':newName,'business':business,'reviews':reviews})
 @login_required(login_url='/accounts/login/')
 def single_business(request,business_id):
     try:

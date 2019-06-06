@@ -9,6 +9,10 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model=Users
         exclude=['user']
+        widgets={
+            'name': forms.TextInput(attrs={'placeholder':'Full names'}),
+        }
+
 
 
 class ReviewForm(forms.ModelForm):
