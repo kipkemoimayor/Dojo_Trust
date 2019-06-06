@@ -152,3 +152,25 @@ h4{
   font-weight: 400;
   text-decoration: underline;
 }
+#search{
+  margin-left: 30vh;
+  height: 5px;
+
+}
+#search input{
+  height: 10px !important;
+  padding: 15px;
+
+}
+#search button{
+  color: white !important;
+}
+#brand{
+  background-color: #baba00;
+  background-image: linear-gradient(315deg, #baba00 0%, #ba1313 74%);
+  padding: 3px;
+}
+.comments{
+  background-color: rgba(0,0,0,0.05);
+  padding: 5px;
+}

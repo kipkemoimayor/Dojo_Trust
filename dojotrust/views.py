@@ -3,6 +3,7 @@ from .forms import Businessform,ProfileForm,ReviewForm
 from .models import Users,Business,Reviews
 from django.contrib.auth.decorators import login_required
 from star_ratings.models import Rating
+from django.http import HttpResponse,Http404
 # Create your views here.
 
 
