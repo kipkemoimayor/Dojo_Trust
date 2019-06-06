@@ -122,5 +122,7 @@ def single_business(request,business_id):
     return render(request,'single_business.html',{"business":business,'busi':busi,'message':message,'form':form,'profile':profile,'reviews':reviews})
 
 def search_business(request):
-    
-    return render(request,'search.html')
+    if 'businesName' in request.GET and request.GET['businesName']:
+        search=request.GET.get('businesName')
+        results=Business.search_by_name(search)
+        return render(request,'search.html',{'business':results})

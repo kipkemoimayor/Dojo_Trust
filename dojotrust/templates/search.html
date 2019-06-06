@@ -1,0 +1,70 @@
+{%extends 'base.html'%}
+{%load ratings%}
+{{block.super}}
+{%block content%}
+<div class="all">
+
+
+<div style='' class="container-fluid">
+  <div class="row">
+    <div id="onetwo" class="col-md-9">
+      <h4>Results</h4>
+      {%if business%}
+      <p>Found {{business.count}} results</p>
+      {%else%}
+      <img class="img-fluid" src="/static/img/40.gif" alt="">
+      {%endif%}
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="size">
+          {%for busi in business%}
+
+            <div class="card sizecard">
+              <div class="card-header">
+                <h6>{{busi.businesName}}</h6>
+              </div>
+              <div class="image">
+                <img class="images" src="{{busi.image.url}}" alt="">
+              </div>
+            <div class="card-footer">
+              <a href="{%url 'single' busi.id%}{{busi.businesName}}">View Ratings</a>
+
+              <span  style="margin-left:10px;"class="badge badge-pill badge-dark"> reviews</span>
+
+            </div>
+            </div>
+
+            {%endfor%}
+              </div>
+              <hr class="bg-dar">
+        </div>
+
+
+
+
+      </div>
+
+
+    </div>
+    <div id="stiky" class="col-md-3">
+      {%if business%}
+
+      {%else%}
+    <ul class="list-group">
+      <li class="list-group-item">Try Using English or kiswahili</li>
+      <li class="list-group-item">Take heart The product You searched for probably does not exist</li>
+    </ul>
+      {%endif%}
+
+
+    </div>
+
+  </div>
+
+
+</div>
+</div>
+
+{%endblock%}

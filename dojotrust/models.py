@@ -27,6 +27,10 @@ class Business(models.Model):
 
     def __str__(self):
         return self.businesName
+    @classmethod
+    def search_by_name(cls,name):
+        results=cls.objects.filter(businesName__icontains=name)
+        return results
 
 
 class Reviews(models.Model):

@@ -30,8 +30,8 @@
         </div>
 
       </li>
-      <form id="search" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search a product" aria-label="Search">
+      <form id="search" role="search" action="{%url 'search'%}" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" name="businesName" placeholder="Search a product" aria-label="Search">
         <button class="btn btn-outline-warning btn-sm" type="submit">Search</button>
       </form>
 
