@@ -76,9 +76,18 @@ def profile(request):
         newName=new_name[0][0]+new_name[1][0]
     else:
         newName=''
+    if request.method=='POST':
+        instance=Users.object.get(user=request.user)
+        update_form=ProfileForm(request.POST,request.FILES,instance=instance)
+        if update_form.is_valid():
+            update=update_form.save(commit=False)
+            profile.save()
+        return redirect('profile')
+    else:
+        update_form=ProfileForm()
 
 
-    return render(request,'profile.html',{'form':form,'profiles':profiles,'name':newName,'business':business,'reviews':reviews})
+    return render(request,'profile.html',{'form':form,'update_form':update_form,'profiles':profiles,'name':newName,'business':business,'reviews':reviews})
 @login_required(login_url='/accounts/login/')
 def single_business(request,business_id):
     try:

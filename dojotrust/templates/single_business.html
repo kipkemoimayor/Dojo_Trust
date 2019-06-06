@@ -38,16 +38,22 @@
     <div class="col-md-10">
       <br>
       <div class="profile">
-
+        {%if profile %}
         <form class="form-group" action="" method="post">
           {%csrf_token%}
           {%bootstrap_form form layout='inline'%}
         </form>
+          {%else%}
+
+          <a style="float:right" class="btn btn-warning btn-sm" href="{%url 'profile'%}">Update profile</a>
+          <input style="width:80%" class="form-control" placeholder="Please update your profile to Post A review" type="text" name="" value="">
+
+
+        {%endif%}
         {%for pro in profile%}
         {%if pro.profile%}
           <img height="50" width="90" src="{{pro.profile.url}}" alt="user">
-          {%else%}
-          <img height="50" width="90" src="/media/user.png" alt="user">
+        
           {%endif%}
           {%endfor%}
       </div>

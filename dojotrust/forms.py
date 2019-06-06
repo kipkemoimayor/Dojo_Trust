@@ -22,3 +22,7 @@ class ReviewForm(forms.ModelForm):
         widgets={
             'review': forms.TextInput(attrs={'placeholder':'Leave a review Press enter when done'}),
         }
+
+# class UpadateProfile(forms.ModelForm):
+#     class Meta:
+#         model=users
