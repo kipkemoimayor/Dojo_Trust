@@ -9,6 +9,9 @@ class Users(models.Model):
     bio=models.CharField(max_length=60)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 CATEGORIES=(
     ('real','Real Estate'),
     ('cars','Automobile'),

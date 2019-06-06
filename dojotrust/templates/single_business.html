@@ -39,7 +39,7 @@
       <br>
       <div class="profile">
         {%if profile %}
-        
+
         <form class="form-group" action="" method="post">
           {%csrf_token%}
           {%bootstrap_form form layout='inline'%}
@@ -68,6 +68,7 @@
       <img height="150" width="150" class="rounded-circle " src="/static/img/slogan.png" alt="">
       <br>
       {%for busi in business%}
+      <p>Posted by {{busi.company}}</p>
       <p class="alert">{{busi.businesName}}</p>
       {%endfor%}
      </div>
@@ -80,7 +81,7 @@
        <div class="comments">
          <img class="rounded-circle" height="50" width="50" src="{{rev.profile.profile.url}}" alt="user">
          <span>{{rev.user}}</span>
-         <span>{{rev.profile}}</span>
+
          <br>
          <span class="com">{{rev.review}}</span>
 
