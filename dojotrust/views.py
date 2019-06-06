@@ -120,3 +120,7 @@ def single_business(request,business_id):
     else:
         form=ReviewForm()
     return render(request,'single_business.html',{"business":business,'busi':busi,'message':message,'form':form,'profile':profile,'reviews':reviews})
+
+def search_business(request):
+    
+    return render(request,'search.html')
