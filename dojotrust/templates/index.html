@@ -134,11 +134,13 @@
       <p style="text-align:center"> <span  style="margin-left:10px;"class="badge badge-pill badge-primary">Rated {{count}} of 10</span></p>
       </div>
     </div>
+    {%endfor%}
     <div class="card">
-      <i>This is the best site ever</i>
+      <p style="text-align:center">You are viewing this from <strong>{{continent}}</strong> in <strong>{{country}}</strong> somewhere in <strong>{{location.capital}} </strong></p>
+      <p style='text-align:center'><img height="100"  class="" src="{{location.country_flag}}" alt=""></p>
+
 
     </div>
-    {%endfor%}
 
 
     </div>

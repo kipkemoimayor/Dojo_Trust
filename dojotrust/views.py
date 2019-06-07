@@ -4,10 +4,12 @@ from .models import Users,Business,Reviews
 from django.contrib.auth.decorators import login_required
 from star_ratings.models import Rating
 from django.http import HttpResponse,Http404
+from . request import location
 # Create your views here.
 
 
 def index(request):
+    data=location()
     business=Business.objects.all()[::-1]
     estate=Business.objects.filter(category='real').all()
     cars=Business.objects.filter(category='cars').all()
@@ -24,7 +26,7 @@ def index(request):
 
     topRate=Business.objects.filter(id=idi)[:1]
     title='Dojo Home'
-    return render(request,'index.html',{'business':business,'title':title,'estate':estate,'cars':cars,'agriculture':agriculture,'wear':wear,'top':topRate,'count':round(top,1),'reviews':reviews})
+    return render(request,'index.html',{'business':business,'title':title,'estate':estate,'cars':cars,'agriculture':agriculture,'wear':wear,'top':topRate,'count':round(top,1),'reviews':reviews,'country':data['country_name'],'continent':data['continent_name'],'location':data['location']})
 
 @login_required(login_url='/accounts/login/')
 def dashboard(request):
