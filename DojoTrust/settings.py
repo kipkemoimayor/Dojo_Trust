@@ -46,20 +46,25 @@ SOCIAL_AUTH_GOOGLE_PLUS_SECRET='y7cx2fdGaXEWByWuEz_BS6Tn'
 
 AUTHENTICATION_BACKENDS=(
     'social_core.backends.google.GooglePlusAuth',
-    # 'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
-# SOCIAL_AUTH_PIPELINE = (
-#     'social_core.pipeline.social_auth.social_details',
-#     'social_core.pipeline.social_auth.social_uid',
-#     'social_core.pipeline.social_auth.auth_allowed',
-#     'social_core.pipeline.social_auth.social_user',
-#     'social_core.pipeline.social_auth.associate_by_email',
-#     'social_core.pipeline.user.create_user',
-#     'social_core.pipeline.social_auth.associate_user',
-#     'social_core.pipeline.social_auth.load_extra_data',
-#     'social_core.pipeline.user.user_details',
-# )
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.social_auth.associate_by_email',
+    'social_core.pipeline.user.create_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+)
+#googlr google_analytics
+GOOGLE_ANALYTICS = {
+    'google_analytics_id': '124',
+}
+
 
 INSTALLED_APPS = [
     'dojotrust',
@@ -72,6 +77,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'star_ratings',
+    'google_analytics',
 ]
 
 MIDDLEWARE = [
