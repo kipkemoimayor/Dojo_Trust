@@ -36,8 +36,7 @@ NO known bugs as at the moment please reach to us if you see any.
 * PostgreSQL Database
 ![](dojotrust/static/img/3.png)
 ![](dojotrust/static/img/4.png)
-<img src="award/static/img/6.png" width="400" height="400">
-<img src="award/static/img/3.png" width="400" height="400">
+
 
 ## Support and contact details
 Email collinskipkemoi24@gmail.com
