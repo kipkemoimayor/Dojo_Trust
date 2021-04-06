@@ -17,7 +17,7 @@ django-celery==3.3.0
 django-google-analytics-app==4.3.9
 django-heroku==0.3.1
 django-model-utils==3.1.2
-django-registration==2.4.1
+django-registration==3.1.2
 django-star-ratings==0.7.0
 gunicorn==19.9.0
 idna==2.8
