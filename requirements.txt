@@ -23,7 +23,7 @@ gunicorn==19.9.0
 idna==2.8
 kombu==3.0.37
 oauthlib==3.0.1
-Pillow==6.0.0
+Pillow==8.2.0
 psycopg2==2.8.2
 PyJWT==1.7.1
 python-decouple==3.1
